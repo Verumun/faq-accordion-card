@@ -1,0 +1,301 @@
+@import 'abstracts/variables';
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+*,
+*::after,
+*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 1.4rem;
+    background-image: linear-gradient(to bottom, $soft-violet, $soft-blue);
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    // overflow-y: auto;
+    // overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper{
+    background-color: #fff;
+    width: 95%;
+    // max-width: 75rem;
+    position: relative;
+    border-radius: 2rem; 
+    margin: 15rem auto;
+    
+
+    .image{
+        position: absolute;
+        top: -11rem;
+        right: 0;
+        left: 0;
+        margin-right: auto;
+        margin-left: auto;
+        width: 24rem;
+
+        #first-desk{
+            display: none;
+        }
+
+        #second{
+            position: relative;
+            top: -8rem;
+        }
+
+        #second-desk{
+            display: none;
+        }
+
+        #box{
+            display: none;
+        }
+    }
+}
+
+section.faq-wrapper{
+    margin-top: 10rem;
+    padding: 2.5rem;
+
+    h2{
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 3rem;
+        font-weight: 700;
+    }
+
+    .faq-content{
+        margin: 2.5rem 0;
+        &>.panel:not(:last-child){
+            margin-bottom: 2rem;
+        }
+
+        .panel{
+            display: none;
+            
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+
+            
+        }
+
+        hr{
+            color: $light-grayish-blue;
+            // width: 100%;
+        }
+
+        button{
+            cursor: pointer;
+            outline: none;
+            width: 100%;
+            border: none;
+            text-align: left;
+            background-color: #fff;
+            padding: 2rem 0;
+            color: $very-dark-grayish-blue;
+
+            img.arrw{
+                margin-left: 1rem;
+            }
+            
+            &:hover{
+                color: $soft-red;
+                transition: color .4s;
+            }
+
+            // &::after{
+            //     position: absolute;
+            //     content: '';
+            //     // float: right;
+            //     width: 4rem;
+            //     height: 4rem;
+            //     right: 0;
+                
+            //     background-image: url('../images/icon-arrow-down.svg');
+            //     background-repeat: no-repeat;
+            //     // float: right;
+            //     // display: block;
+                
+            // }
+
+            // &::after{
+            //     position: absolute;
+            //     content: '';
+            //     // float: right;
+            //     width: 4rem;
+            //     height: 4rem;
+            //     right: 0;
+                
+            //     background-image: url('../images/icon-arrow-up.svg');
+            //     background-repeat: no-repeat;
+            //     // float: right;
+            //     display: none;
+                
+            // }
+        }
+    }
+}
+
+.active{
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: black;
+}
+
+.active::after{
+    // position: re;
+    content: '';
+    // background-image: url('../images/icon-arrow-down.svg');
+    // transform: rotate(-180deg);
+    // height: 1rem;
+    top: 15rem;
+    // right: 0;
+    // width: 4rem;
+    left: 96rem;
+   
+    // left: rem;
+}
+
+@media screen and (min-width:320px){
+    .faq-wrapper{
+        .faq-content{
+            padding-right:2rem;
+        }
+    }
+}
+
+@media screen and (min-width:375px){
+    .wrapper{
+        width: 90%;
+
+    }
+
+   
+}
+
+@media screen and (min-width:425px){
+    .faq-wrapper{
+        .faq-content{
+            padding-right: 0rem;
+        }
+    }
+}
+
+// desktop
+@media screen and (min-width: 1000px){
+    .wrapper{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin: 0 auto;
+        max-width: 90rem;
+        overflow:hidden;
+        // padding: 10rem;
+        // all: unset;
+
+        
+
+        .image{
+
+
+            all: unset;
+            // position: relative;
+            margin-top: 22rem;
+
+            #first-mobile{
+                display: none;
+            }
+
+            #second{
+                display: none;
+            }
+
+            // deskyop images
+
+            #first-desk{
+                display: block;
+                position: relative;
+                top: -10rem;
+                left: -8rem;
+                z-index: 900;
+                
+            }
+
+            #second-desk{
+                display: block;
+                position: absolute;
+                top: -27rem;
+                left: -59rem;
+                width: 100rem;
+            }
+
+        }
+    }
+
+    section.faq-wrapper{
+        padding: 0 7.5rem 0 0;
+        
+        
+        h2{
+            text-align: left;
+        }
+
+        .faq-content{
+
+            max-height: 38rem;
+            overflow: scroll;
+            scrollbar-width: none;
+            -webkit-scrollbar-width:none;
+
+            button, .panel{
+                padding-right: 2rem;
+            }
+            button{
+
+               &::after{
+                   position: absolute;
+                   right: 48px;
+               }
+            }
+        }
+        
+        // .faq-content{
+        //     // width: 35rem;
+        // }
+    }
+}
+
+
+// @media screen and (max-width:812px){
+//     .wrapper{
+//         width: 85%;
+//     }
+// }
+
+
+
+
+.practice{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    background-color: #eee;
+    padding: 3rem 1rem;
+    width: 100%;
+    
+
+    .panel-e{
+        display: none;
+    }
+}
